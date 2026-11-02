@@ -1,0 +1,56 @@
+
+.glow-card {
+  --glow-hue: 120;
+  --pointer-x: -1000px;
+  --pointer-y: -1000px;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+
+  background:
+    radial-gradient(
+      260px circle at var(--pointer-x) var(--pointer-y),
+      hsl(var(--glow-hue) 100% 60% / 0.16),
+      transparent 70%
+    ),
+    rgba(15, 23, 42, 0.88);
+
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.glow-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  pointer-events: none;
+
+  background: radial-gradient(
+    180px circle at var(--pointer-x) var(--pointer-y),
+    hsl(var(--glow-hue) 100% 65% / 0.9),
+    transparent 70%
+  );
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.glow-card:hover {
+  border-color: hsl(var(--glow-hue) 80% 60% / 0.35);
+  box-shadow: 0 0 24px hsl(var(--glow-hue) 80% 50% / 0.08);
+}
+
+.glow-card__content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  min-width: 0;
+}
+
