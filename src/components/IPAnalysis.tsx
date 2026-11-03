@@ -1,3 +1,4 @@
+import type { PacketInfo } from "../types/packet";
 
 import { useMemo, useState } from "react";
 import {
@@ -8,17 +9,6 @@ import {
   Network,
   Database,
 } from "lucide-react";
-
-interface PacketInfo {
-  timestamp: string;
-  source: string;
-  destination: string;
-  protocol: string;
-  source_port: string | number | null;
-  destination_port: string | number | null;
-  size: number;
-}
-
 
 interface HostInfo {
   ip: string;

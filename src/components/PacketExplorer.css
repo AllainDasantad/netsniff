@@ -1,0 +1,81 @@
+
+.packet-detail-tabs {
+  display: flex;
+  gap: 8px;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border-color, #263244);
+}
+
+.packet-detail-tabs button {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.packet-detail-tabs button.active {
+  background: rgba(34, 197, 94, 0.12);
+  border-color: rgba(34, 197, 94, 0.4);
+  color: #22c55e;
+}
+
+.packet-hex-container {
+  padding: 16px;
+  overflow: auto;
+  max-height: 480px;
+}
+
+.packet-hex-header,
+.packet-hex-row {
+  display: grid;
+  grid-template-columns: 90px minmax(380px, 1fr) 180px;
+  gap: 16px;
+  align-items: center;
+  font-family: monospace;
+  font-size: 12px;
+  white-space: pre;
+}
+
+.packet-hex-header {
+  color: #94a3b8;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #263244;
+}
+
+.packet-hex-header button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.packet-hex {
+  margin: 0;
+  padding-top: 12px;
+  overflow-x: auto;
+}
+
+.packet-hex-row {
+  padding: 3px 0;
+}
+
+.packet-hex-offset {
+  color: #64748b;
+}
+
+.packet-hex-bytes {
+  color: #60a5fa;
+}
+
+.packet-hex-ascii {
+  color: #4ade80;
+}
+
+.packet-modal-header h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+

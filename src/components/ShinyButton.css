@@ -1,0 +1,97 @@
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.shiny-cta {
+  --highlight: #42e6a4;
+  --highlight-subtle: #a7f3d0;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  padding: 12px 16px;
+
+  color: #42e6a4;
+  background:
+    linear-gradient(#101c29, #101c29) padding-box,
+    conic-gradient(
+      from var(--gradient-angle),
+      transparent,
+      var(--highlight),
+      #ffffff,
+      var(--highlight),
+      transparent
+    ) border-box;
+
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: background 200ms ease;
+}
+
+.shiny-cta span {
+  position: relative;
+  z-index: 1;
+}
+
+.shiny-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle,
+    #42e6a4 1px,
+    transparent 1px
+  );
+  background-size: 8px 8px;
+  opacity: 0.08;
+}
+
+.shiny-cta:hover {
+  background:
+    linear-gradient(#142329, #142329) padding-box,
+    conic-gradient(
+      from var(--gradient-angle),
+      transparent,
+      #42e6a4,
+      white,
+      #42e6a4,
+      transparent
+    ) border-box;
+  box-shadow: 0 0 18px #42e6a422;
+}
+
+.shiny-cta:focus-visible {
+  outline: 2px solid #42e6a4;
+  outline-offset: 4px;
+}
+
+.shiny-cta:active {
+  transform: translateY(1px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .shiny-cta:hover {
+    animation: shiny-rotate 3s linear infinite;
+  }
+
+  @keyframes shiny-rotate {
+    to {
+      --gradient-angle: 360deg;
+    }
+  }
+}
+
