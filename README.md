@@ -1,4 +1,4 @@
-# Netsnif — Network Analyzer
+# Netsnif Network Analyzer
 
 <p align="center">
   A desktop network traffic analyzer built with React, TypeScript, Rust, and Tauri.
