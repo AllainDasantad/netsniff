@@ -304,3 +304,7 @@ Potential future development:
 - Improved IPv6 parsing
 - Capture session management
 - More detailed protocol statistics
+
+## License
+
+Netsnif is licensed under the [MIT License](LICENSE).
